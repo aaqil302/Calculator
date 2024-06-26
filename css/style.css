@@ -1,27 +1,32 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
-#body{
+
+#body {
   background-image: linear-gradient(to right, rgb(10, 10, 10), rgb(146, 146, 146), rgb(10, 10, 10));
   color: aliceblue; 
   display: flex;
   justify-content: center;
+  align-items: center; /* Center content vertically */
+  height: 100vh; /* Make sure body takes full height */
 }
-.container{
+
+.container {
   background-color: rgb(27, 27, 27);
-  height: 85vh;
+  height: 75vh;
   border: rgb(51, 54, 51) double 10px;
   border-radius: 15px;
-
-
+  padding: 20px; /* Add padding */
 }
-.box{
+
+.box {
   background-color: rgb(27, 27, 27);
   height: 10px;
   border-radius: 20px;
 }
-.screen{
+
+.screen {
   font-family: 'Orbitron', monospace;
   background-color: rgb(43, 54, 49);
   font-size: 2rem;
@@ -31,16 +36,20 @@
   height: 85px;
   width: 100%;         
 }
-.button{
+
+.button {
   display: flex;
+  flex-direction: column; /* Stack buttons vertically */
 }
-.count{
-  width: 20vw;
+
+.count, .cal {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center; /* Center buttons */
   margin-top: 10px;
 }
-.count .btn{
+
+.count .btn, .cal .btn {
   font-variant-numeric: normal;
   font-size: 2rem;
   color: rgb(0, 7, 0);
@@ -51,31 +60,36 @@
   border: none;
   border-radius: 15px;
   box-shadow: 5px 5px 5px #000000;
-  
 }
-#ac{
+
+#ac {
   background-color: rgb(255, 153, 0);
 }
-.cal{
-  width: 10vw;
-  display: flex;
-  justify-content: end;
-  flex-wrap: wrap;
-  margin-top: 10px;
-}
-.cal .btn{
-  font-variant-numeric: normal;
-  font-size: 2rem;
-  color: rgb(0, 7, 0);
-  margin: 5px;
-  width: 100px;
-  height: 50px;
+
+.cal .btn {
   background-color: rgb(0, 97, 8);
-  border: none;
-  border-radius: 15px;
-  box-shadow: 5px 5px 5px #070707;
-  
 }
 
+/* Media Query for Mobile Screens */
+@media (max-width: 768px) {
+  .container {
+    width: 90vw; /* Adjust container width */
+    height: auto; /* Allow height to adjust based on content */
+  }
 
+  .screen {
+    font-size: 1.5rem; /* Adjust font size */
+    height: 60px; /* Adjust height */
+  }
 
+  .count .btn, .cal .btn {
+    font-size: 1.5rem; /* Adjust font size */
+    width: 60px; /* Adjust button width */
+    height: 50px; /* Adjust button height */
+  }
+
+  .cal {
+    width: 100%; /* Make sure cal section takes full width */
+    justify-content: center; /* Center buttons */
+  }
+}
